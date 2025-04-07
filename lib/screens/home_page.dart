@@ -19,10 +19,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: colors.blue, title: Row(children: [
-
-
-      ],)),
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Row(
+          children: [
+            Expanded(child: Image.asset('assets/rdplogo.png', height: 80)),
+          ],
+        ),
+      ),
     );
   }
 }
