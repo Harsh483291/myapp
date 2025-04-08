@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   final List<Map<String, dynamic>> tasks = [];
   // Create a variable that captures the input of a text input
   final TextEditingController nameController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -40,6 +41,18 @@ class _HomePageState extends State<HomePage> {
         ),
       );
     });
+  }
+
+  //function add new task to local state & firestore database
+  Future<void> addTask() async {
+    final taskName = nameController.text.trim();
+    if (taskName.isNotEmpty) {
+      final newTask = {
+        'name': taskName,
+        'completed': false,
+        'timestamp': FieldValue.serverTimestamp(),
+      };
+    }
   }
 
   @override
